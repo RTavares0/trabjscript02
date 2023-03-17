@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Formulário em 3 fases</title>
+    <link rel="stylesheet" href="style.css">
+  
+  </head>
+  <body>
+    <h1>Formulário em 3 fases</h1>
+    <form id="form-fase1" class="form-fase" onsubmit="validarFase1(); return false;">
+      <h2>Fase 1: Dados pessoais</h2>
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" name="nome" required>
+      <label for="cpf">CPF:</label>
+      <input type="text" id="cpf" name="cpf" maxlength="11" required>
+      <label for="senha">Senha:</label>
+      <input type="password" id="senha" name="senha" minlength="8" required>
+      <label for="confirma-senha">Confirme a senha:</label>
+      <input type="password" id="confirma-senha" name="confirma-senha" minlength="8" required>
+      <div id="erros-fase1"></div>
+      <button type="submit">Próxima fase</button>
+    </form>
+
+    <form id="form-fase2" class="form-fase" onsubmit="validarFase2(); return false;" style="display: none;">
+      <h2>Fase 2: Dados profissionais</h2>
+      <label for="profissao">Profissão:</label>
+      <input type="text" id="profissao" name="profissao" required>
+      <label for="estado">Estado onde trabalha:</label>
+      <select id="estado" name="estado" required>
+        <option value="" selected disabled>Selecione um estado</option>
+        <option value="RS">RS</option>
+        <option value="SC">SC</option>
+        <option value="PR">PR</option>
+      </select>
+      <label for="anos-experiencia">Anos de experiência:</label>
+      <input type="number" id="anos-experiencia" name="anos-experiencia" min="0" max="50" required>
+      <div id="erros-fase2"></div>
+      <button type="submit">Próxima fase</button>
+    </form>
+
+    <div id="form-fase3" style="display: none;">
+      <h2>Fase 3: Verificação dos dados</h2>
+      <p>Por favor, verifique se os seus dados estão corretos:</p>
+      <p>Nome: <span id="nome-resp"></span></p>
+      <p>CPF: <span id="cpf-resp"></span></p>
+      <p>Profissão: <span id="profissao-resp"></span></p>
+      <p>Estado onde trabalha: <span id="estado-resp"></span></p>
+      <p>Anos de experiência: <span id="anos-experiencia-resp"></span></p>
+      <button id="btn-enviar" onclick="enviarDados()">Enviar</button>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
