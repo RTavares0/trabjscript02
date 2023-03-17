@@ -1,5 +1,7 @@
 # trabjscript02
 
+https://rtavares0.github.io/trabjscript02/
+
 Fase 1:
 A primeira fase é responsável por validar os campos da página do formulário que estão relacionados às informações pessoais do usuário, como nome, CPF, senha e confirmação de senha. 
 A função utilizada para isso é a validarFase1().
